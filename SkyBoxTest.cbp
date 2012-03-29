@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SkyBoxTest" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="SkyBoxTest" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-w" />
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Linker>
+			<Add library="glut32" />
+			<Add library="glu32" />
+			<Add library="opengl32" />
+			<Add library="winmm" />
+			<Add library="gdi32" />
+		</Linker>
+		<Unit filename="CZAIL.h" />
+		<Unit filename="Camera.cpp">
+			<Option link="0" />
+		</Unit>
+		<Unit filename="FPSCamera.cpp">
+			<Option link="0" />
+		</Unit>
+		<Unit filename="Model_3DS.cpp">
+			<Option link="0" />
+		</Unit>
+		<Unit filename="Model_3DS.h" />
+		<Unit filename="Motion.h" />
+		<Unit filename="Object.h" />
+		<Unit filename="ObjectManager.h" />
+		<Unit filename="SkyBox.h" />
+		<Unit filename="Terrain.h" />
+		<Unit filename="Vector3.cpp">
+			<Option link="0" />
+		</Unit>
+		<Unit filename="Vector3.h" />
+		<Unit filename="Water.h" />
+		<Unit filename="bullet.h" />
+		<Unit filename="font.h" />
+		<Unit filename="gl_image.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="grass.h" />
+		<Unit filename="guy.h" />
+		<Unit filename="loader.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="md2model.cpp">
+			<Option link="0" />
+		</Unit>
+		<Unit filename="md2model.h" />
+		<Unit filename="misc.h" />
+		<Unit filename="staticobject.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
