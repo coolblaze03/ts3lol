@@ -1,0 +1,636 @@
+# depslib dependency file v1.0
+1268765432 source:c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\skybox.cpp
+	<math.h>
+	<GL\glut.h>
+	"Vector3.h"
+	"gl_image.c"
+
+1268766042 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\vector3.h
+	<GL/gl.h>
+	<iostream>
+	<math.h>
+
+1268765514 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\gl_image.c
+	<GL/glut.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1240857808 source:c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\vector3.cpp
+	<math.h>
+	"Vector3.h"
+
+1268765514 source:c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\gl_image.c
+	<GL/glut.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1281712813 source:c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\main.cpp
+	<GL/glut.h>
+	<stdlib.h>
+	<math.h>
+	"Vector3.cpp"
+	"gl_image.c"
+	<string.h>
+	"Motion.h"
+	"Camera.cpp"
+	"SkyBox.cpp"
+	"ObjectManager.h"
+	"Water.h"
+	"Terrain.h"
+	"md2model.cpp"
+	"guy.h"
+	"staticobject.h"
+	"font.h"
+	"misc.h"
+	"grass.h"
+	"fog.h"
+	<vector>
+
+1281551066 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\motion.h
+
+1268766147 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\camera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1268765432 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\skybox.cpp
+	<math.h>
+	<GL\glut.h>
+	"Vector3.h"
+	"gl_image.c"
+
+1268764906 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\objectmanager.h
+	<vector>
+	"Object.h"
+
+1281711085 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\object.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<io.h>
+	"Motion.h"
+
+1268764908 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\water.h
+	"noise.c"
+
+1124921312 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\noise.c
+	<stdlib.h>
+
+1268764907 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\terrain.h
+	<math.h>
+
+1281542027 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\md2model.cpp
+	<fstream>
+	"md2model.h"
+
+1268769454 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\md2model.h
+	<GL/glut.h>
+	"Vector3.h"
+	"gl_image.c"
+	"Object.h"
+
+1268765971 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\guy.h
+	"Object.h"
+
+1268764913 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\staticobject.h
+
+1268764909 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\font.h
+
+1268764912 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\misc.h
+
+1281462714 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\grass.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1240857808 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\vector3.cpp
+	<math.h>
+	"Vector3.h"
+
+1281542027 source:c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\md2model.cpp
+	<fstream>
+	"md2model.h"
+
+1268766147 source:c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\camera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1281713334 c:\documents and settings\chabli.b.ppsplussoftware\my documents\a transfer files\c++ projects\ogl materials\oglgame\skybox test\fog.h
+
+1268765432 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\skybox.cpp
+	<math.h>
+	<GL\glut.h>
+	"Vector3.h"
+	"gl_image.c"
+
+1268766042 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\vector3.h
+	<GL/gl.h>
+	<iostream>
+	<math.h>
+
+1268765514 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\gl_image.c
+	<GL/glut.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1240857808 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\vector3.cpp
+	<math.h>
+	"Vector3.h"
+
+1268765514 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\gl_image.c
+	<GL/glut.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1281713576 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\main.cpp
+	<GL/glut.h>
+	<stdlib.h>
+	<math.h>
+	"Vector3.cpp"
+	"gl_image.c"
+	<string.h>
+	"Motion.h"
+	"Camera.cpp"
+	"SkyBox.cpp"
+	"ObjectManager.h"
+	"Water.h"
+	"Terrain.h"
+	"md2model.cpp"
+	"guy.h"
+	"staticobject.h"
+	"font.h"
+	"misc.h"
+	"grass.h"
+	"fog.h"
+	<vector>
+
+1240857808 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\vector3.cpp
+	<math.h>
+	"Vector3.h"
+
+1281551066 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\motion.h
+
+1268766147 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\camera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1268765432 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\skybox.cpp
+	<math.h>
+	<GL\glut.h>
+	"Vector3.h"
+	"gl_image.c"
+
+1268764906 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\objectmanager.h
+	<vector>
+	"Object.h"
+
+1281711085 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\object.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<io.h>
+	"Motion.h"
+
+1268764908 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\water.h
+	"noise.c"
+
+1124921312 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\noise.c
+	<stdlib.h>
+
+1268764907 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\terrain.h
+	<math.h>
+
+1281542027 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\md2model.cpp
+	<fstream>
+	"md2model.h"
+
+1268769454 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\md2model.h
+	<GL/glut.h>
+	"Vector3.h"
+	"gl_image.c"
+	"Object.h"
+
+1268765971 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\guy.h
+	"Object.h"
+
+1268764913 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\staticobject.h
+
+1268764909 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\font.h
+
+1268764912 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\misc.h
+
+1281462714 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\grass.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1281713334 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\fog.h
+
+1281542027 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\md2model.cpp
+	<fstream>
+	"md2model.h"
+
+1268766147 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test\camera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1311269204 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\skybox.cpp
+	<math.h>
+	<GL\glut.h>
+	"Vector3.h"
+	"CZAIL.h"
+
+1268766042 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\vector3.h
+	<GL/gl.h>
+	<iostream>
+	<math.h>
+
+1311270572 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\gl_image.c
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1240857808 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\vector3.cpp
+	<math.h>
+	"Vector3.h"
+
+1311268651 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\gl_image.c
+	<GL/glut.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1332960939 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\main.cpp
+	<GL/glut.h>
+	<GL/glfw.h>
+	<stdlib.h>
+	<math.h>
+	"CZA/Vector3.cpp"
+	"CZA/CZAIL.h"
+	<string.h>
+	"CZA/Motion.h"
+	"CZA/Camera.cpp"
+	"CZA/Camera2.cpp"
+	"CZA/SkyBox.h"
+	"CZA/ObjectManager.h"
+	"CZA/Water.h"
+	"CZA/Terrain.h"
+	"CZA/md2model.cpp"
+	"CZA/guy.h"
+	"CZA/staticobject.h"
+	"CZA/font.h"
+	"CZA/misc.h"
+	"CZA/grass.h"
+	"CZA/fog.h"
+	"CZA/TextruedSquare.h"
+	"CZA/bullet.h"
+	"CZA/FPSCamera.cpp"
+	"CZA/Model_3DS.cpp"
+	<vector>
+
+1240857808 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\vector3.cpp
+	<math.h>
+	"Vector3.h"
+
+1281551066 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\motion.h
+
+1311798952 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\camera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1311196816 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\skybox.cpp
+	<math.h>
+	<GL\glut.h>
+	"Vector3.h"
+
+1313602885 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\objectmanager.h
+	<vector>
+	<map>
+	"Object.h"
+
+1314127124 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\object.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<io.h>
+	"CZAIL.h"
+	"Motion.h"
+
+1312322102 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\water.h
+	"noise.c"
+
+1124921312 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\noise.c
+	<stdlib.h>
+
+1313597938 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\terrain.h
+	<math.h>
+	"Object.h"
+
+1311613506 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\md2model.cpp
+	<fstream>
+	"md2model.h"
+
+1311268929 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\md2model.h
+	<GL/glut.h>
+	<time.h>
+	"Vector3.h"
+	"CZAIL.h"
+	"Object.h"
+
+1313703183 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\guy.h
+	"Object.h"
+	<typeinfo>
+	"bullet.h"
+
+1313602602 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\staticobject.h
+
+1311269261 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\font.h
+
+1312304308 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\misc.h
+
+1312322121 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\grass.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1281713334 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\fog.h
+
+1311613506 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\md2model.cpp
+	<fstream>
+	"md2model.h"
+
+1311798952 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\camera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1310690085 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\camera2.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1310690085 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\camera2.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1311198256 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\imgobject.h
+
+1311199059 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\gl_image.cpp
+	<GL/glut.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1311199059 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\gl_image.cpp
+	<GL/glut.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1314044604 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\czail.h
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	"gl_image.c"
+
+1311269866 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\skybox.h
+	<math.h>
+	<GL\glut.h>
+	"Vector3.h"
+	"CZAIL.h"
+
+1314126199 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\fpscamera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+	"Terrain.h"
+	"TerrainT.h"
+
+1314126199 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\fpscamera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+	"Terrain.h"
+	"TerrainT.h"
+
+1311803080 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\textruedsquare.h
+	"CZAIL.h"
+	"misc.h"
+
+1314122744 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\bullet.h
+	"CZAIL.h"
+	"misc.h"
+	"Object.h"
+	"FPSCamera.cpp"
+
+1313596012 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\terraint.h
+	<math.h>
+	"Object.h"
+
+1314027878 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\3ds.h
+	<vector>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"windef.h"
+	"Vector3.h"
+	"CZAIL.h"
+
+1314028613 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\3ds.cpp
+	"3ds.h"
+	<assert.h>
+
+1314028613 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\3ds.cpp
+	"3ds.h"
+	<assert.h>
+
+1314048943 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\model_3ds.cpp
+	"Model_3DS.h"
+	<math.h>
+	<gl\gl.h>
+
+1314045044 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\model_3ds.h
+	<stdio.h>
+	<string.h>
+	"CZAIL.h"
+
+1314048943 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\model_3ds.cpp
+	"Model_3DS.h"
+	<math.h>
+	<gl\gl.h>
+
+1240857808 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\vector3.cpp
+	<math.h>
+	"Vector3.h"
+
+1268766042 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\vector3.h
+	<GL/gl.h>
+	<iostream>
+	<math.h>
+
+1314044604 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\czail.h
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	"gl_image.c"
+
+1311270572 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\gl_image.c
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1281551066 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\motion.h
+
+1311798952 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\camera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1310690085 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\camera2.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1311269866 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\skybox.h
+	<math.h>
+	<GL\glut.h>
+	"Vector3.h"
+	"CZAIL.h"
+
+1313602885 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\objectmanager.h
+	<vector>
+	<map>
+	"Object.h"
+
+1314127124 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\object.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<io.h>
+	"CZAIL.h"
+	"Motion.h"
+
+1312322102 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\water.h
+	"noise.c"
+
+1124921312 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\noise.c
+	<stdlib.h>
+
+1313597938 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\terrain.h
+	<math.h>
+	"Object.h"
+
+1311613506 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\md2model.cpp
+	<fstream>
+	"md2model.h"
+
+1311268929 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\md2model.h
+	<GL/glut.h>
+	<time.h>
+	"Vector3.h"
+	"CZAIL.h"
+	"Object.h"
+
+1313703183 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\guy.h
+	"Object.h"
+	<typeinfo>
+	"bullet.h"
+
+1314122744 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\bullet.h
+	"CZAIL.h"
+	"misc.h"
+	"Object.h"
+	"FPSCamera.cpp"
+
+1312304308 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\misc.h
+
+1314126199 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\fpscamera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+	"Terrain.h"
+	"TerrainT.h"
+
+1313596012 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\terraint.h
+	<math.h>
+	"Object.h"
+
+1313602602 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\staticobject.h
+
+1311269261 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\font.h
+
+1312322121 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\grass.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1281713334 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\fog.h
+
+1311803080 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\textruedsquare.h
+	"CZAIL.h"
+	"misc.h"
+
+1314048943 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\model_3ds.cpp
+	"Model_3DS.h"
+	<math.h>
+	<gl\gl.h>
+
+1314045044 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\skybox test converting to codeblox\cza\model_3ds.h
+	<stdio.h>
+	<string.h>
+	"CZAIL.h"
+
