@@ -1,0 +1,36 @@
+*****************************************************************
+*	APRON TUTORIAL PRESENTED BY MORROWLAND			*
+*****************************************************************
+*	Project Name		: BoundingBox Collision		*
+*	Project Description	: Collision Made Easy		*
+*	Project Type		: OpenGL			*
+*	Author			: Ronny André Reierstad		*
+*	Web Page		: www.morrowland.com		*
+*	E-Mail			: apron@morrowland.com		*
+*	Version			: English (UK)			*
+*	Date			: 22.10.2002			*
+*****************************************************************
+
+
+-----------------------------------------------------------------
+
+Almost every 3D game today uses some kind of collision test in their game engine.
+For example, you want to decide if a missile has hit a character, or a character
+is colliding with a wall or trip-wire. The first goal when creating a collision
+test is to decide what kind of collision test to use. You need to keep a lot of
+things in mind when making this choice: high frame rate, collision accuracy, terrain, etc.
+I can’t tell you what kind of collision test is best for your engine, but in
+this tutorial you will learn how to use one type of the "BoundingBox Collision Test".
+
+What this app does is test if a 3D point (view or position) is inside a BoundingBox.
+This tutorial is not a complete collision test solution, because I have tried to keep this
+tutorial as easy to understand as possible. So if you move against a box and twist
+the camera you will eventually "break through". If you want to avoid this and create a better
+test you must add more test points. One solution is to add a "box" around your camera.
+
+
+-----------------------------------------------------------------
+Regards
+Ronny André Reierstad
+www.morrowland.com
+apron@morrowland.com
