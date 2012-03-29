@@ -1,0 +1,90 @@
+[Project]
+FileName=C:\Documents and Settings\chabli.b\Desktop\gl_boundingbox\APRON.dev
+Name=APRON
+Ver=1
+IsCpp=1
+Type=0
+Compiler=-D__GNUWIN32__ -W -DWIN32 -DNDEBUG -D_WINDOWS -D_MBCS 
+CppCompiler=-D__GNUWIN32__ -W -DWIN32 -DNDEBUG -D_WINDOWS -D_MBCS 
+Includes=
+Linker=-lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid -lodbc32 -lodbccp32 
+Libs=
+UnitCount=11
+Folders="Source Files","Header Files","Resource Files"
+[Unit1]
+FileName=./3DMath.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit2]
+FileName=./3ds.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit3]
+FileName=./3dsLoader.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit4]
+FileName=./Camera.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit5]
+FileName=./CJPEGFile.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit6]
+FileName=./Main.cpp
+Folder="Source Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit7]
+FileName=./3DMath.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit8]
+FileName=./3ds.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit9]
+FileName=./3dsLoader.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit10]
+FileName=./CJPEGFile.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit11]
+FileName=./Main.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
