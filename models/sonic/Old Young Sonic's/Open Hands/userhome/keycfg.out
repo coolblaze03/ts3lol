@@ -1,0 +1,147 @@
+tool_snap_to_grid 
+tool_select_vertices V
+tool_select_faces F
+tool_select_connected_mesh C
+tool_select_groups G
+tool_select_bone_joints B
+tool_select_points T
+tool_move M
+tool_rotate R
+cmd_hide_hide_unselected H
+cmd_hide_hide_selected Shift+H
+cmd_hide_unhide_all Shift+U
+cmd_delete Del
+cmd_duplicate Ctrl+D
+cmd_copy_selected_to_clipboard Ctrl+C
+cmd_paste_from_clipboard Ctrl+V
+cmd_extrude Ins
+cmd_weld_vertices Ctrl+W
+viewwin_file_new Ctrl+N
+viewwin_file_open Ctrl+O
+viewwin_file_save Ctrl+S
+viewwin_file_quit Ctrl+Q
+viewwin_view_frame_all Home
+viewwin_view_frame_selected Shift+Home
+viewwin_groups_edit_groups Ctrl+G
+viewwin_groups_edit_materials Ctrl+M
+viewwin_groups_edit_texture_coordinates Ctrl+E
+viewwin_joints_assign_selected Ctrl+B
+tool_scale 
+viewwin_file_save_as 
+viewwin_file_export 
+viewwin_file_export_selected 
+viewwin_file_plugins 
+viewwin_file_close 
+viewwin_view_render_joints_hide 
+viewwin_view_render_joints_lines 
+viewwin_view_render_joints_bones 
+viewwin_view_render_projections_show 
+viewwin_view_render_projections_hide 
+viewwin_view_render_badtex_red 
+viewwin_view_render_badtex_blank 
+viewwin_view_render_3d_lines_show 
+viewwin_view_render_3d_lines_hide 
+viewwin_view_render_backface_show 
+viewwin_view_render_backface_hide 
+viewwin_view_show_properties 
+viewwin_view_3d_wireframe 
+viewwin_view_3d_flat 
+viewwin_view_3d_smooth 
+viewwin_view_3d_textured 
+viewwin_view_3d_alpha 
+viewwin_view_ortho_wireframe 
+viewwin_view_ortho_flat 
+viewwin_view_ortho_smooth 
+viewwin_view_ortho_textured 
+viewwin_view_ortho_alpha 
+viewwin_view_1 
+viewwin_view_1x2 
+viewwin_view_2x1 
+viewwin_view_2x2 
+viewwin_view_2x3 
+viewwin_view_3x2 
+viewwin_view_3x3 
+viewwin_view_viewport_settings 
+tool_snap_to_vertex 
+tool_select_projections 
+tool_shear 
+tool_extrude 
+tool_drag_vertex_on_edge 
+tool_attract_near 
+tool_attract_far 
+tool_move_background_image 
+tool_scale_background_image 
+tool_create_vertex 
+tool_create_cube 
+tool_create_ellipsoid 
+tool_create_cylinder 
+tool_create_torus 
+tool_create_polygon 
+tool_create_rectangle 
+tool_create_bone_joint 
+tool_create_point 
+tool_create_projection 
+viewwin_model_edit_meta_data 
+viewwin_model_transform 
+viewwin_model_boolean_operation 
+viewwin_model_set_background_image 
+viewwin_model_merge 
+viewwin_model_import_animations 
+viewwin_groups_cleanup 
+viewwin_groups_reload_textures 
+viewwin_groups_edit_projection 
+viewwin_groups_paint_texture 
+viewwin_joints_edit_joints 
+viewwin_joints_auto_assign_selected 
+viewwin_joints_remove_influences 
+viewwin_joints_remove_joint 
+viewwin_joints_make_single_influence 
+viewwin_joints_select_joint_influences 
+viewwin_joints_select_influenced_vertices 
+viewwin_joints_select_influenced_points 
+viewwin_joints_select_unassigned_vertices 
+viewwin_joints_select_unassigned_points 
+cmd_unweld_vertices 
+cmd_snap_vertices_together_snap_all_selected 
+cmd_snap_vertices_together_snap_nearest_selected 
+cmd_snap_vertices_together_snap_all_and_weld 
+cmd_snap_vertices_together_snap_nearest_and_weld 
+cmd_snap_vertices_together 
+cmd_make_face_from_vertices 
+cmd_select_free_vertices 
+cmd_edge_turn 
+cmd_edge_divide 
+cmd_subdivide_faces 
+cmd_rotate_texture_coordinates_face 
+cmd_rotate_texture_coordinates_group 
+cmd_rotate_texture_coordinates 
+cmd_align_selected 
+cmd_simplify_mesh 
+cmd_cap_holes 
+cmd_spherify 
+cmd_invert_normals 
+cmd_normals_face_out 
+cmd_hide 
+cmd_flip_flip_x 
+cmd_flip_flip_y 
+cmd_flip_flip_z 
+cmd_flip 
+cmd_flatten_flatten_x 
+cmd_flatten_flatten_y 
+cmd_flatten_flatten_z 
+cmd_flatten 
+cmd_invert_selection 
+viewwin_anim_start_mode 
+viewwin_anim_stop_mode 
+viewwin_anim_animation_sets 
+viewwin_anim_save_images 
+viewwin_anim_frame_copy 
+viewwin_anim_frame_paste 
+viewwin_anim_frame_clear 
+viewwin_anim_selected_copy 
+viewwin_anim_selected_paste 
+viewwin_anim_set_rotation 
+viewwin_anim_set_translation 
+viewwin_help_contents 
+viewwin_help_license 
+viewwin_help_about 
