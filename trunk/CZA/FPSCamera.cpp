@@ -26,6 +26,8 @@ class FPSCamera:public Object{
             stopmotion = true;
         }
 
+        bool useterrainheight;
+
 
 
       public:
@@ -37,6 +39,9 @@ class FPSCamera:public Object{
 
         FPSCamera(Terrain * terrain);
         FPSCamera(TerrainT * terrain);
+        FPSCamera(){
+            mode = 0;
+        };
 
         void orientMe(float ang);
         void CirclePoint(float ang);
@@ -50,6 +55,9 @@ class FPSCamera:public Object{
         void Init();
         void SetPosition(GLdouble xx,GLdouble yy,GLdouble zz);
         void CursorChange(int x, int y);
+        void setUseTerrainHeight(bool val){
+            useterrainheight = val;
+        }
 
         bool mode;
 
@@ -72,7 +80,7 @@ class FPSCamera:public Object{
 };
 
 FPSCamera::FPSCamera(Terrain* terrain){
-
+        mode = 0;
 	    angle=0.0;
 	    yangle = 0.0;
         x=0.0f;
@@ -96,12 +104,14 @@ FPSCamera::FPSCamera(Terrain* terrain){
         this->world_width = terrain->width_starting();
         this->world_length = terrain->length_starting();
         stopmotion = false;
+        useterrainheight = true;
 
+        radius0 = 2;
 
 }
 
 FPSCamera::FPSCamera(TerrainT* terrain){
-
+        mode = 0;
 	    angle=0.0;
 	    yangle = 0.0;
         x=0.0f;
@@ -122,8 +132,11 @@ FPSCamera::FPSCamera(TerrainT* terrain){
         lasty = -999;
         this->terraint = terrain;
         this->radius0 = 1;
+        useterrainheight = true;
 
         SetCurrentPos();
+
+        radius0 = 2;
 
 }
 
@@ -263,7 +276,13 @@ void FPSCamera::moveMeFlat(int direction) {
             // y = 1.75000936f + y;
         	//y = terrain->heightAt(x + (terrain->width_starting()/2),z + (terrain->length_starting()/2)) + HEIGHT_OFFSET;
 
-            y = terrain->heightAt(x,z) + HEIGHT_OFFSET;
+            if (useterrainheight == true){
+                y = terrain->heightAt(x,z) + HEIGHT_OFFSET;
+            }
+
+
+
+
 
         	glLoadIdentity();
         	centerx = x + lx;
@@ -290,7 +309,11 @@ void FPSCamera::Strafe(int direction) {
         	//y = terrain->heightAt(x + (terrain->width_starting()/2),z + (terrain->length_starting()/2)) + HEIGHT_OFFSET;
             //y = (terrain->terrainScale() * terrain->heightAt( x / terrain->terrainScale(), z / terrain->terrainScale()) ) + HEIGHT_OFFSET;
 
-            y = terrain->heightAt(x,z) + HEIGHT_OFFSET;
+            //y = terrain->heightAt(x,z) + HEIGHT_OFFSET;
+
+            if (useterrainheight == true){
+                y = terrain->heightAt(x,z) + HEIGHT_OFFSET;
+            }
 
         	glLoadIdentity();
         	centerx = x + lx;

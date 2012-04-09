@@ -23,44 +23,101 @@
 			<Add library="winmm" />
 			<Add library="gdi32" />
 		</Linker>
-		<Unit filename="CZAIL.h" />
-		<Unit filename="Camera.cpp">
+		<Unit filename="CZA\3ds.cpp">
+			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="FPSCamera.cpp">
+		<Unit filename="CZA\3ds.h" />
+		<Unit filename="CZA\3dsloader.cpp">
+			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="Model_3DS.cpp">
+		<Unit filename="CZA\3dsloader.h" />
+		<Unit filename="CZA\BackupTerrain.h" />
+		<Unit filename="CZA\BackupWater.h" />
+		<Unit filename="CZA\CZAIL.h" />
+		<Unit filename="CZA\Camera.cpp">
+			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="Model_3DS.h" />
-		<Unit filename="Motion.h" />
-		<Unit filename="Object.h" />
-		<Unit filename="ObjectManager.h" />
-		<Unit filename="SkyBox.h" />
-		<Unit filename="Terrain.h" />
-		<Unit filename="Vector3.cpp">
+		<Unit filename="CZA\Camera.h" />
+		<Unit filename="CZA\Camera2.cpp">
+			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="Vector3.h" />
-		<Unit filename="Water.h" />
-		<Unit filename="bullet.h" />
-		<Unit filename="font.h" />
-		<Unit filename="gl_image.c">
+		<Unit filename="CZA\FPSCamera.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="CZA\Imagc_obj.h" />
+		<Unit filename="CZA\ImgObject.h" />
+		<Unit filename="CZA\Model_3DS.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="CZA\Model_3DS.h" />
+		<Unit filename="CZA\Motion.h" />
+		<Unit filename="CZA\ObjLoader.c">
 			<Option compilerVar="CC" />
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="grass.h" />
-		<Unit filename="guy.h" />
-		<Unit filename="loader.h" />
-		<Unit filename="main.cpp" />
-		<Unit filename="md2model.cpp">
+		<Unit filename="CZA\ObjLoader.h" />
+		<Unit filename="CZA\Object.cpp">
+			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="md2model.h" />
-		<Unit filename="misc.h" />
-		<Unit filename="staticobject.h" />
+		<Unit filename="CZA\Object.h" />
+		<Unit filename="CZA\ObjectManager.h" />
+		<Unit filename="CZA\SkyBox.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="CZA\SkyBox.h" />
+		<Unit filename="CZA\SkyBoxTest_private.h" />
+		<Unit filename="CZA\Terrain.h" />
+		<Unit filename="CZA\TerrainT.h" />
+		<Unit filename="CZA\TextruedSquare.h" />
+		<Unit filename="CZA\Vector3.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="CZA\Vector3.h" />
+		<Unit filename="CZA\Water.h" />
+		<Unit filename="CZA\WorkingWater.h" />
+		<Unit filename="CZA\bullet.h" />
+		<Unit filename="CZA\fog.h" />
+		<Unit filename="CZA\font.h" />
+		<Unit filename="CZA\gl_image.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="CZA\gl_image.h" />
+		<Unit filename="CZA\grass.h" />
+		<Unit filename="CZA\guy.h" />
+		<Unit filename="CZA\loader.h" />
+		<Unit filename="CZA\md2model.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="CZA\md2model.h" />
+		<Unit filename="CZA\misc.h" />
+		<Unit filename="CZA\noise.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="CZA\noise.h" />
+		<Unit filename="CZA\staticobject.h" />
+		<Unit filename="CZA\tgaLoader.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="CZA\tgaLoader.h" />
+		<Unit filename="CZA\vars.h" />
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

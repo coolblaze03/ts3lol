@@ -634,3 +634,157 @@
 	<string.h>
 	"CZAIL.h"
 
+1333662586 source:c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\main.cpp
+	<GL/glut.h>
+	<GL/glfw.h>
+	<stdlib.h>
+	<math.h>
+	"CZA/Vector3.cpp"
+	"CZA/CZAIL.h"
+	<string.h>
+	"CZA/Motion.h"
+	"CZA/Camera.cpp"
+	"CZA/Camera2.cpp"
+	"CZA/SkyBox.h"
+	"CZA/ObjectManager.h"
+	"CZA/Water.h"
+	"CZA/Terrain.h"
+	"CZA/md2model.cpp"
+	"CZA/guy.h"
+	"CZA/staticobject.h"
+	"CZA/font.h"
+	"CZA/misc.h"
+	"CZA/grass.h"
+	"CZA/fog.h"
+	"CZA/TextruedSquare.h"
+	"CZA/bullet.h"
+	"CZA/FPSCamera.cpp"
+	"CZA/Model_3DS.cpp"
+	<vector>
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\vector3.cpp
+	<math.h>
+	"Vector3.h"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\vector3.h
+	<GL/gl.h>
+	<iostream>
+	<math.h>
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\czail.h
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	"gl_image.c"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\gl_image.c
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\motion.h
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\camera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\camera2.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\skybox.h
+	<math.h>
+	<GL\glut.h>
+	"Vector3.h"
+	"CZAIL.h"
+
+1333979429 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\objectmanager.h
+	<vector>
+	<map>
+	"Object.h"
+
+1333983112 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\object.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<io.h>
+	"CZAIL.h"
+	"Motion.h"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\water.h
+	"noise.c"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\noise.c
+	<stdlib.h>
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\terrain.h
+	<math.h>
+	"Object.h"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\md2model.cpp
+	<fstream>
+	"md2model.h"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\md2model.h
+	<GL/glut.h>
+	<time.h>
+	"Vector3.h"
+	"CZAIL.h"
+	"Object.h"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\guy.h
+	"Object.h"
+	<typeinfo>
+	"bullet.h"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\bullet.h
+	"CZAIL.h"
+	"misc.h"
+	"Object.h"
+	"FPSCamera.cpp"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\misc.h
+
+1333982886 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\fpscamera.cpp
+	<math.h>
+	<GL/glut.h>
+	"Vector3.h"
+	"Terrain.h"
+	"TerrainT.h"
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\terraint.h
+	<math.h>
+	"Object.h"
+
+1333660661 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\staticobject.h
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\font.h
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\grass.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\fog.h
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\textruedsquare.h
+	"CZAIL.h"
+	"misc.h"
+
+1333652782 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\model_3ds.cpp
+	"Model_3DS.h"
+	<math.h>
+	<gl\gl.h>
+
+1333639972 c:\users\chabli.b\desktop\transfered files\c++ projects\ogl materials\oglgame\ts3lol\cza\model_3ds.h
+	<stdio.h>
+	<string.h>
+	"CZAIL.h"
+

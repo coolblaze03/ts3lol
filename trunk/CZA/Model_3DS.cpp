@@ -289,6 +289,7 @@ void Model_3DS::Draw()
 	if (visible)
 	{
 	glPushMatrix();
+	//glColor3f(1,0.854f,0.725f);
 	glColor3f(1,1,1);
 
 		// Move the model
@@ -775,8 +776,14 @@ void Model_3DS::MapNameChunkProcessor(long length, long findex, int matindex)
 	// Load the name and indicate that the material has a texture
 	char fullname[80];
 	sprintf(fullname, "%s%s", path, name);
-	Materials[matindex].tex = CZAIL::BuildTexture(fullname, true);
-	Materials[matindex].textured = true;
+
+	int sval = strcmp(name, "");
+
+	if (sval != 0){
+        Materials[matindex].tex = CZAIL::BuildTexture(fullname, true);
+        Materials[matindex].textured = true;
+	}
+
 
 	// move the file pointer back to where we got it so
 	// that the ProcessChunk() which we interrupted will read
