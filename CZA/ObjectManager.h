@@ -138,7 +138,14 @@ class ObjectManager{
              float dz = obj1z - obj2z;
 
              float r = obj1->radius()*2.0f + obj2->radius()*2.0f;
-             if ((dx * dx) + (dz * dz) < r * r) {
+
+             float tempdx = dx * dx;
+             float tempdz = dz * dz;
+             float tempr = r * r;
+             float tempdxdz = tempdx + tempdz;
+
+             if (tempdxdz < tempr) {
+                //if (((dx * dx) + (dz * dz)) < (r * r)) {
                 float vx = obj1->velocityX() - obj2->velocityX();
                 float vz = obj1->velocityZ() - obj2->velocityZ();
                 return vx * dx + vz * dz < 0;
@@ -251,6 +258,8 @@ class ObjectManager{
                           continue;
 
                        if (testCollision(g1, g2)) {
+
+                            testCollision(g1, g2);
 
                            g1->AfterCollisionDetected(g2);
                            g2->AfterCollisionDetected(g1);

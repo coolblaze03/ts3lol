@@ -13,6 +13,15 @@ class StaticObject: public Guy  {
 			init();
 		}
 
+		StaticObject(MD2Model* model1,Terrain* terrain1,float terrainScale1, float xpos, float ypos):Guy(model1, terrain1, terrainScale1) {
+
+			x0 = (xpos/terrain->width_starting()) *((terrain->width() - 1) - radius0) + radius0;
+			z0 = (ypos/terrain->length_starting()) *((terrain->width() - 1) - radius0) + radius0;
+
+
+			init();
+		}
+
 		void init(){
              staticDL = glGenLists (1);
              glNewList(staticDL, GL_COMPILE);
@@ -73,7 +82,7 @@ class StaticObject: public Guy  {
 
 
 		static vector<StaticObject*> makeObjects(int numObjects, MD2Model* model, Terrain* terrain) {
-            float TERRAIN_WIDTH = 512.0f;
+
             vector<StaticObject*> Sobjects;
             for(int i = 0; i < numObjects; i++) {
                 Sobjects.push_back(new StaticObject(model,
@@ -81,6 +90,11 @@ class StaticObject: public Guy  {
                                         (terrain->terrainScale())));
             }
             return Sobjects;
+        }
+
+        static StaticObject* makeObject(int numObjects, MD2Model* model, Terrain* terrain, int x, int y) {
+            return new StaticObject(model,terrain,(terrain->terrainScale()),x,y);
+            //return new StaticObject(model,terrain,(terrain->terrainScale()));
         }
 };
 

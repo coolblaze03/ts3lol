@@ -45,7 +45,8 @@ using namespace std;
 
 
   //CLoad3DS g_Load3ds;										// This is 3DS class.  This should go in a good model class.
-  Model_3DS m;
+  //Model_3DS m;
+  vector<Model_3DS> models3ds;
 
   SkyBox SkyBox1;
   Grid Grid1;
@@ -55,8 +56,8 @@ using namespace std;
   Loader3ds spaceship, bus,maxtest;//, house;
   Water Lake;
   Water Lake2;
-  Terrain Land1(WORLDSIZE,WORLDSIZE);
-  FPSCamera Cam(&Land1); //Camera for scene
+  Terrain Land1;
+  FPSCamera Cam; //Camera for scene
   Misc Miscfunct;
 
   Bullet* bulletList[BULLETMAX];
@@ -289,7 +290,12 @@ render_testitems(){
             sonic->advance(0.001);
             sonic->DrawBoundingBox();
 
-            m.Render();
+            for (int i=0;i<models3ds.size();i++){
+
+                models3ds.at(i).Render();
+
+                //m.Render();
+            }
 
             //Lake.Render();
 
@@ -660,6 +666,12 @@ const GLfloat high_shininess[] = { 100.0f };
 //This needs to moved to the guy class.
 const float TERRAIN_WIDTH = 512.0f;
 
+struct mapobj{
+    char let;
+    int x;
+    int y;
+};
+
 void init(){
 
 
@@ -707,20 +719,36 @@ void init(){
 
     //maxtest.Load3DS("models\\cube\\Camaro_2006.3DS");
 
+
+
     Lake.LoadTexture("images\\alpha.jpg","images\\reflection.jpg");
     Lake.SetPosition(Vector3(0,1,0));
 
 
     //Land1.LoadTextures("images\\heightmap512.bmp", "images\\green.bmp",10);
 
-    Land1.LoadTextures("images\\heightmap.bmp", "images\\green.bmp",0);
 
-    m.Load("models\\Castle\\Castle.3DS");
+
+
+
+
+    //models3ds.push_back(m);
+    //m.scale = 14;
+
+    /*
+
+       Model_3DS m;
+    //m.Load("models\\hogwarts\\Hogwarts.3ds");
+    m.Load("models\\deathstar\\Death_Star.3ds");
+    //m.Load("models\\Castle\\Castle.3DS");
     m.lit = false;
     m.pos.x = Land1.width() / 2;
     m.pos.y += 0.1f;
     m.pos.z = Land1.length() / 2;
-    m.scale = 14;
+    m.scale = .2;
+
+    */
+
 
     //Load the model GUY
 	_model = MD2Model::load("models\\misc\\blockybalboa.md2");
@@ -782,13 +810,92 @@ void init(){
 	}
 
 
+    vector<mapobj> mapobjs;
+	//Load in file for processing.
+    int cmx = 0;
+    int cmy = 0;
+
+    int cmwid = 0;
+    int cmlen = 0;
+
+    string line;
+    ifstream myfile ("Map3.txt");
+    if (myfile.is_open())
+    {
+       while ( myfile.good() )
+       {
+         getline (myfile,line);
+
+         for (int i = 0;i<line.size();i++){
+            if (cmx == 0 && cmy == 0){
+                cmwid = line.size();
+                break;
+            }
+            char c = line.at(i);
+
+            if (c != ' ' && c != 'X'){
+
+                mapobj maptemp;
+                maptemp.let = c;
+                maptemp.x = cmx;
+                maptemp.y = cmy;
+
+                mapobjs.push_back(maptemp);
+
+
+            }
+
+            cmx += 1;
+
+         }
+         //cout << line << endl;
+         cmx = 0;
+         cmy += 1;
+       }
+       cmlen = cmy;
+       myfile.close();
+    }
+
+
+    Land1 = Terrain(cmlen,cmwid);
+    //Land1 = Terrain(WORLDSIZE,WORLDSIZE);
+    Cam = FPSCamera(&Land1); //Camera for scene
+
+    Land1.LoadTextures("images\\heightmap.bmp", "images\\green.bmp",0);
+
+     Cam.setUseTerrainHeight(false);
+
+    for (int i = 0; i < mapobjs.size();i++){
+
+        mapobj m1 = mapobjs.at(i);
+
+        if (m1.let == 'T'){
+            _trees.push_back(StaticObject::makeObject(0, testmodel, &Land1, m1.x, m1.y));
+        }
+
+    }
+
+
+
+        Model_3DS m;
+    //m.Load("models\\hogwarts\\Hogwarts.3ds");
+    //m.Load("models\\deathstar\\Death_Star.3ds");
+    //m.Load("models\\Castle\\Castle.3DS");
+    m.Load("models\\peachtree\\ganyedes_s Peach tree.3ds");
+    m.lit = false;
+    m.pos.x = Land1.width() / 2;
+    m.pos.y += 0.1f;
+    m.pos.z = Land1.length() / 2;
+    m.scale = 14.0f;
+
+
     CameraGuy = new Guy(_model, &Land1, TERRAIN_WIDTH / (Land1.width() - 1));
 
 	//Make the guys
-	_guys = Guy::makeGuys(20, _model, &Land1); //Create the guys
+	_guys = Guy::makeGuys(0, _model, &Land1); //Create the guys
 
 	//create banana trees objects
-	_trees = StaticObject::makeObjects(200, testmodel, &Land1); //Create the trees
+	//_trees = StaticObject::makeObjects(0, testmodel, &Land1); //Create the trees
 
     grass = new GrassObject(&Land1, (Land1.terrainScale()));
 
