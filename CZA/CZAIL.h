@@ -31,7 +31,7 @@ public:
     static  ImgObject GetTextureDataBeta(const char * filename, bool invertimg = false, bool grayscale = false, bool gentexcoords = false, bool buildMipMap = false, bool addalpha = false );
     static GLuint ProcessTextureData(ImgObject imageobject);
     static GLuint BuildTexture(const char * filename, bool invertimg = false, bool grayscale = false, bool gentexcoords = false, bool buildMipMap = false, bool addalpha = false);
-    static unsigned char * resample_image(	const unsigned char* const orig,int width, int height, int channels,int new_width, int new_height);
+    static unsigned char * resample_image(	const unsigned char* const orig,int &width, int &height, int &channels,int new_width, int new_height);
     static GLuint BuildColorTexture(unsigned char r, unsigned char g, unsigned char b);
 
 private:
@@ -45,11 +45,14 @@ private:
 
 #endif
 
-unsigned char * CZAIL::resample_image(	const unsigned char* const orig,int width, int height, int channels,int new_width, int new_height)
+unsigned char * CZAIL::resample_image(	const unsigned char* const orig,int &width, int &height, int &channels,int new_width, int new_height)
 {
 
     unsigned char *resampled = (unsigned char*)malloc( channels*new_width*new_height );
     up_scale_image(orig, width, height, channels, (char*)resampled, new_width, new_height );
+    width = new_width;
+    height = new_height;
+    channels = channels;
 
     //stbi_image_free( orig );
     //img = resampled;

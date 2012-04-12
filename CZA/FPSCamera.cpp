@@ -106,7 +106,7 @@ FPSCamera::FPSCamera(Terrain* terrain){
         stopmotion = false;
         useterrainheight = true;
 
-        radius0 = 2;
+        radius0 = 1;
 
 }
 
@@ -136,7 +136,7 @@ FPSCamera::FPSCamera(TerrainT* terrain){
 
         SetCurrentPos();
 
-        radius0 = 2;
+        radius0 = 1;
 
 }
 

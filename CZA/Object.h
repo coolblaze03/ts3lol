@@ -98,6 +98,16 @@ class Object{
             return isActive;
         }
 
+        bool isUserGenerated(){
+            return userGenerated;
+        }
+
+        void setUserGenerated(bool value){
+            userGenerated = value;
+        }
+
+
+
 
       protected:
         Vector3 Pos, Siz, min, max, PrevPos;
@@ -112,6 +122,7 @@ class Object{
         float _cx;
         float _cy;
         float _cz;
+        bool userGenerated;
 
         void DrawBoundingBoxNoTransitions();
 
@@ -386,6 +397,7 @@ Object::Object(){
       isActive = true;
       isCenterDefined = false;
       Normal = Vector3(0,1,0);
+      userGenerated = false;
      Setup();
 
 }
@@ -408,6 +420,7 @@ Object::Object(Vector3 Position, Vector3 Size){
         isActive = true;
         isCenterDefined = false;
          Normal = Vector3(0,1,0);
+         userGenerated = false;
      Setup(Position,Size);
 }
 

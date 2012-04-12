@@ -36,6 +36,8 @@
 #define BULLETMAX 30
 #define WORLDSIZE 512
 
+#define SELF 991128
+
 using namespace std;
 
   Vector3 position;
@@ -54,8 +56,8 @@ using namespace std;
   Cube Cube1;
   ObjectManager OManage;
   Loader3ds spaceship, bus,maxtest;//, house;
-  Water Lake;
-  Water Lake2;
+  //Water Lake;
+  //Water Lake2;
   Terrain Land1;
   FPSCamera Cam; //Camera for scene
   Misc Miscfunct;
@@ -74,6 +76,7 @@ using namespace std;
 
   vector<Guy*> _guys;
   vector<StaticObject*> _trees;
+  vector<Water*> _water;
   Guy* CameraGuy;
   //vector<GrassObject*> _grass;
   fog myfog;
@@ -143,6 +146,8 @@ void processMouse(int button, int state, int x, int y) {
         for (int i = 0; i < BULLETMAX; i++){
             if (!bulletList[i]->Active()){
 
+                //This is so collision dectection can not let your own bullets hit you right after initial firing.
+                bulletList[i]->setUserGenerated(true);
                 bulletList[i]->SetPosition(Cam);
                 bulletList[i]->setActive(true);
 
@@ -297,7 +302,18 @@ render_testitems(){
                 //m.Render();
             }
 
+
+                glPushMatrix();
+
+                for(unsigned int i = 0; i < _water.size(); i++) {
+                    _water[i]->Render();
+
+                }
+
+                glPopMatrix();
+
             //Lake.Render();
+
 
                 //spaceship.Render();
                 //g_Load3ds.Render();
@@ -675,7 +691,6 @@ struct mapobj{
 void init(){
 
 
-
     //testing scales
     //float ra = 1;//randomFloat();
     //float radius0 = 0.4f * ra + 0.25f;
@@ -721,8 +736,7 @@ void init(){
 
 
 
-    Lake.LoadTexture("images\\alpha.jpg","images\\reflection.jpg");
-    Lake.SetPosition(Vector3(0,1,0));
+
 
 
     //Land1.LoadTextures("images\\heightmap512.bmp", "images\\green.bmp",10);
@@ -861,15 +875,34 @@ void init(){
     //Land1 = Terrain(WORLDSIZE,WORLDSIZE);
     Cam = FPSCamera(&Land1); //Camera for scene
 
-    Land1.LoadTextures("images\\heightmap.bmp", "images\\green.bmp",0);
+    Land1.LoadTextures("images\\heightmap.bmp", "images\\green.bmp",0, "images\\mountain_texture.jpg");
 
      Cam.setUseTerrainHeight(false);
+
+
+
+     //Lake.LoadTexture("images\\alpha.jpg","images\\reflection.jpg");
+     //Lake.SetPosition(Vector3(5,0,5));
+
+     Water::LoadTexture("images\\alpha.jpg","images\\reflection.jpg");
+
 
     for (int i = 0; i < mapobjs.size();i++){
 
         mapobj m1 = mapobjs.at(i);
 
         if (m1.let == 'T'){
+            _trees.push_back(StaticObject::makeObject(0, testmodel, &Land1, m1.x, m1.y));
+        }else if (m1.let == 'W'){
+            Water* wtemp;
+            wtemp = new Water(&Land1);
+            wtemp->SetPosition(Vector3(m1.x,0,m1.y));
+            _water.push_back(wtemp);
+        }else if (m1.let == 'Q'){
+            Water* wtemp;
+            wtemp = new Water(&Land1);
+            wtemp->SetPosition(Vector3(m1.x,0,m1.y));
+            _water.push_back(wtemp);
             _trees.push_back(StaticObject::makeObject(0, testmodel, &Land1, m1.x, m1.y));
         }
 
@@ -880,19 +913,20 @@ void init(){
         Model_3DS m;
     //m.Load("models\\hogwarts\\Hogwarts.3ds");
     //m.Load("models\\deathstar\\Death_Star.3ds");
-    //m.Load("models\\Castle\\Castle.3DS");
-    m.Load("models\\peachtree\\ganyedes_s Peach tree.3ds");
+    m.Load("models\\Castle\\Castle.3DS");
+    //m.Load("models\\peachtree\\ganyedes_s Peach tree.3ds");
     m.lit = false;
     m.pos.x = Land1.width() / 2;
     m.pos.y += 0.1f;
     m.pos.z = Land1.length() / 2;
-    m.scale = 14.0f;
+    m.scale = 7.0f;
 
+    //models3ds.push_back(m);
 
     CameraGuy = new Guy(_model, &Land1, TERRAIN_WIDTH / (Land1.width() - 1));
 
 	//Make the guys
-	_guys = Guy::makeGuys(0, _model, &Land1); //Create the guys
+	_guys = Guy::makeGuys(10, _model, &Land1); //Create the guys
 
 	//create banana trees objects
 	//_trees = StaticObject::makeObjects(0, testmodel, &Land1); //Create the trees
@@ -915,6 +949,12 @@ void init(){
 		OManage.AddToManager(*_trees[i]);
 	}
 
+	//water
+	for(unsigned int i = 0; i < _water.size(); i++) {
+		//OManage.AddToManager(*_water[i]);
+		//need to maek sure water is not colliding with other water and also need to utilize the hight portions since a flyer should not be affected.
+	}
+
     //add to manager
 	for(unsigned int i = 0; i < _guys.size(); i++) {
 		OManage.AddToManager(*_guys[i]);
@@ -927,7 +967,7 @@ void init(){
 
 	Crosshair.LoadTexture("images\\Crosshair.tga");
 
-	OManage.AddToManager(Cam);
+	//OManage.AddToManager(Cam);
 
 
     //OManage.AddToManager(Ball1);

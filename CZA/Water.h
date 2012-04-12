@@ -2,13 +2,16 @@
 #define WATER_H_INCLUDED
 
 #include "noise.c"
+#include "terrain.h"
 
 class Water:public Object{
       private:
-      #define		RESOLUTION 128
+      //#define		RESOLUTION 128
+      #define		RESOLUTION 1
 
-         GLuint	texture;
+         static GLuint	texture;
 
+         Terrain* terrain;
          int	left_click;
          int	right_click;
          int	wire_frame;
@@ -38,7 +41,9 @@ class Water:public Object{
 
      public:
 
-            Water(){
+            Water(Terrain* terrain1){
+
+                    terrain = terrain1;
 
                     glEnable( GL_TEXTURE_2D );
                 	left_click = GLUT_UP;
@@ -50,16 +55,35 @@ class Water:public Object{
                  	rotate_x = 30;
                  	rotate_y = 15;
                  	translate_z = 4;
+                 	//translate_z = 0;
+                 	//iScale = 0.5f;
 
                  	surface[6 * RESOLUTION * (RESOLUTION + 1)];
                  	normal[6 * RESOLUTION * (RESOLUTION + 1)];
-
+                    standingwater = true;
                  	InitNoise ();
 
 
             }
 
-            void LoadTexture(char * alpha_filename, char * caustic_filename){
+            /*void SetPosition(Vector3 Position){
+
+                   float x0 = (Position.x/terrain->width_starting()) *((terrain->width()) - radius0) + radius0;
+                   float z0 = (Position.z/terrain->length_starting()) *((terrain->width()) - radius0) + radius0;
+
+
+                   Pos = Vector3(x0, Position.y, z0);
+                   //Pos = Position;
+                   _cx = x0;
+                   _cy = Position.y;
+                   _cz = z0;
+                   SetCollisionBox();
+
+            }*/
+
+            bool standingwater;
+
+            static void LoadTexture(char * alpha_filename, char * caustic_filename){
                  glPushMatrix();
                  unsigned char * total_texture = new unsigned char[4 * 256 * 256];
                       //unsigned char alpha_texture[256 * 256];
@@ -110,6 +134,8 @@ class Water:public Object{
 
 
                 glPushMatrix();
+
+                if (standingwater == false){
                       //glEnable (GL_DEPTH_TEST);
                       glEnable (GL_TEXTURE_GEN_S);
                       glEnable (GL_TEXTURE_GEN_T);
@@ -118,7 +144,7 @@ class Water:public Object{
                       glPolygonMode (GL_FRONT_AND_BACK, GL_FILL);
                       glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 
-                    const float t = glutGet (GLUT_ELAPSED_TIME) / 1000.;
+                      const float t = glutGet (GLUT_ELAPSED_TIME) / 1000.;
                       const float delta = 2. / RESOLUTION;
                       const unsigned int length = 2 * (RESOLUTION + 1);
                       const float xn = (RESOLUTION + 1) * delta + 1;
@@ -391,9 +417,231 @@ class Water:public Object{
                       glVertexPointer (3, GL_FLOAT, 0, NULL);
                        glDisable (GL_TEXTURE_GEN_S);
                       glDisable (GL_TEXTURE_GEN_T);
+
+                    }else{
+
+
+
+                                                                  //glEnable (GL_DEPTH_TEST);
+                                                                  glEnable (GL_TEXTURE_GEN_S);
+                                                                  glEnable (GL_TEXTURE_GEN_T);
+                                                                  glEnable (GL_BLEND);
+                                                                  glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+                                                                  glPolygonMode (GL_FRONT_AND_BACK, GL_FILL);
+                                                                  glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+
+                                                                  const float t = glutGet (GLUT_ELAPSED_TIME) / 1000.;
+                                                                  const float delta = 1. / RESOLUTION;
+                                                                  const unsigned int length = 2 * (RESOLUTION + 1);
+                                                                  const float xn = (RESOLUTION + 1) * delta + 1;
+                                                                  unsigned int i;
+                                                                  unsigned int j;
+                                                                  float x;
+                                                                  float y;
+                                                                  unsigned int indice;
+                                                                  unsigned int preindice;
+
+
+
+                                                                  float l;
+                                                                  int sufsiz = sizeof(surface);
+                                                                  int texsiz = sizeof(texCoords);
+                                                                  int tcount = 0;
+
+                                                                  glBindTexture (GL_TEXTURE_2D, texture);
+
+                                                                  //glTranslatef(Pos.vec[0],Pos.vec[1],Pos.vec[2]);
+                                                                  glScalef(iScale, iScale, iScale);
+
+                                                                 // glTranslatef (0, 0, -translate_z);
+                                                                  //glRotatef (rotate_y, 1, 0, 0);
+                                                                  //glRotatef (rotate_x, 0, 1, 0);
+
+                                                                  int looper = 0;
+
+                                                                  /* Vertices */
+                                                                  for (j = 0; j < RESOLUTION; j++)
+                                                                    {
+                                                                      y = (j + 1) * delta - 1;
+                                                                      for (i = 0; i <= RESOLUTION; i++)
+                                                                    {
+                                                                      indice = 6 * (i + j * (RESOLUTION + 1));
+
+                                                                      x = i * delta - 1;
+                                                                      surface[indice + 3] = x;
+                                                                      surface[indice + 4] = z (x, y, t);
+                                                                      surface[indice + 5] = y;
+
+                                                                        float tx = (float)i / (float)(RESOLUTION);
+                                                                        float ty = (float)j / (float)(RESOLUTION);
+                                                                        float txb = (float)(i+1)/(float)(RESOLUTION);
+                                                                        float tyb = (float)(j+1)/(float)(RESOLUTION);
+
+
+                                                                        if (looper == 0){
+                                                                            texCoords[tcount] = tx;
+                                                                            tcount++;
+                                                                            texCoords[tcount] = ty;
+                                                                            tcount++;
+                                                                            looper++;
+                                                                        }else if (looper == 1){
+                                                                            texCoords[tcount] = tx;
+                                                                            tcount++;
+                                                                            texCoords[tcount] = tyb;
+                                                                            tcount++;
+                                                                            looper++;
+                                                                        }else if (looper == 2){
+                                                                            texCoords[tcount] = txb;
+                                                                            tcount++;
+                                                                            texCoords[tcount] = ty;
+                                                                            tcount++;
+                                                                            looper++;
+                                                                        }else if (looper == 3){
+                                                                            texCoords[tcount] = txb;
+                                                                            tcount++;
+                                                                            texCoords[tcount] = tyb;
+                                                                            tcount++;
+                                                                            looper = 0;
+                                                                        }
+
+                                                                      if (j != 0)
+                                                                        {
+                                                                          /* Values were computed during the previous loop */
+                                                                          preindice = 6 * (i + (j - 1) * (RESOLUTION + 1));
+                                                                          surface[indice] = surface[preindice + 3];
+                                                                          //texCoords[tcount] = surface[preindice + 3];
+                                                                          //tcount++;
+                                                                          surface[indice + 1] = surface[preindice + 4];
+                                                                          //texCoords[tcount] = surface[preindice + 4];
+                                                                          //tcount++;
+                                                                          surface[indice + 2] = surface[preindice + 5];
+                                                                        }
+                                                                      else
+                                                                        {
+                                                                          surface[indice] = x;
+                                                                          //texCoords[tcount] = x;
+                                                                          //tcount++;
+                                                                          surface[indice + 1] = z (x, -1, t);
+                                                                          //texCoords[tcount] = z (x, -1, t);
+                                                                          //tcount++;
+                                                                          surface[indice + 2] = -1;
+                                                                        }
+                                                                    }
+                                                                    }
+
+
+  //MY Test
+                                                                  /*surface[0] = -0.5f;
+                                                                  surface[1] = 0;
+                                                                  surface[2] = -0.5f;
+
+                                                                  surface[3] = -0.5f;
+                                                                  surface[4] = 0;
+                                                                  surface[5] = 0.5;
+
+                                                                  surface[6] = 0.5f;
+                                                                  surface[7] = 0;
+                                                                  surface[8] = -0.5f;
+
+                                                                  surface[9] = 0.5f;
+                                                                  surface[10] = 0;
+                                                                  surface[11] = 0.5f;
+
+                                                                  //MY Test
+                                                                  surface[0] = -1;
+                                                                  surface[1] = 0;
+                                                                  surface[2] = -1;
+
+                                                                  surface[3] = -1;
+                                                                  surface[4] = 0;
+                                                                  surface[5] = 1;
+
+                                                                  surface[6] = 1;
+                                                                  surface[7] = 0;
+                                                                  surface[8] = -1;
+
+                                                                  surface[9] = 1;
+                                                                  surface[10] = 0;
+                                                                  surface[11] = 1;
+
+                                                                   //MY Test
+                                                                  surface[0] = -1;
+                                                                  surface[1] = 0;
+                                                                  surface[2] = -1;
+
+                                                                  surface[3] = -1;
+                                                                  surface[4] = 0;
+                                                                  surface[5] = 1;
+
+                                                                  surface[6] = 1;
+                                                                  surface[7] = 0;
+                                                                  surface[8] = -1;
+
+                                                                  surface[9] = 1;
+                                                                  surface[10] = 0;
+                                                                  surface[11] = 1;
+*/
+                                                                   // glTranslatef(Pos.vec[0],Pos.vec[1],Pos.vec[2]);
+                                                                  surface[0] = Pos.vec[0] + 0;
+                                                                  surface[1] = 0;
+                                                                  surface[2] = Pos.vec[2] + 0;
+
+                                                                  surface[3] = Pos.vec[0] + 0;
+                                                                  surface[4] = 0;
+                                                                  surface[5] = Pos.vec[2] + 1;
+
+                                                                  surface[6] = Pos.vec[0] + 1;
+                                                                  surface[7] = 0;
+                                                                  surface[8] = Pos.vec[2] + 0;
+
+                                                                  surface[9] = Pos.vec[0] + 1;
+                                                                  surface[10] = 0;
+                                                                  surface[11] = Pos.vec[2] + 1;
+
+                                                                  for (int ac = 0; ac <= 11 ; ac++){
+                                                                    if (ac!=1 && ac!=4 && ac!=7 && ac!=10 ){
+                                                                        surface[ac] -= 1;
+                                                                    }
+                                                                  }
+
+
+                                                                  glTranslatef (0, 0.2, 0);
+
+
+                                                                  /* Render wireframe? */
+                                                                  if (wire_frame != 0)
+                                                                    glPolygonMode (GL_FRONT_AND_BACK, GL_LINE);
+
+                                                                  /* The water */
+                                                                  glEnable (GL_TEXTURE_2D);
+                                                                  glColor3f (1, 1, 1);
+                                                                  glEnableClientState (GL_NORMAL_ARRAY);
+                                                                  glEnableClientState (GL_VERTEX_ARRAY);
+                                                                  glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+                                                                  glTexCoordPointer(2, GL_FLOAT, 0, texCoords);
+                                                                  glNormalPointer (GL_FLOAT, 0, normal);
+                                                                  glVertexPointer (3, GL_FLOAT, 0, surface);
+
+                                                                  for (i = 0; i < RESOLUTION; i++)
+                                                                    glDrawArrays (GL_TRIANGLE_STRIP, i * length, length);
+
+
+                                                                    glEnable (GL_TEXTURE_2D);
+                                                                    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+                                                                    glDisable (GL_BLEND);
+                                                                    glTexCoordPointer(2, GL_FLOAT, 0, NULL);
+                                                                  glNormalPointer (GL_FLOAT, 0, NULL);
+                                                                  glVertexPointer (3, GL_FLOAT, 0, NULL);
+                                                                   glDisable (GL_TEXTURE_GEN_S);
+                                                                  glDisable (GL_TEXTURE_GEN_T);
+
+                    }
+
                     glPopMatrix();
            }
 
 };
+
+GLuint Water::texture;
 
 #endif
