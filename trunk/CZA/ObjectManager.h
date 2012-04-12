@@ -238,7 +238,7 @@ class ObjectManager{
 
                    Object* g1 = ObjManager[i];
 
-                   if (!g1->isActive)
+                   if (!g1->isActive || g1->isUserGenerated())
                         continue;
 
                    for (unsigned int j = 0; j < ObjManager.size(); j++) {
@@ -254,7 +254,7 @@ class ObjectManager{
 
                        Object* g2 = ObjManager[j];
 
-                       if (!g2->isActive)
+                       if (!g2->isActive  || g2->isUserGenerated())
                           continue;
 
                        if (testCollision(g1, g2)) {

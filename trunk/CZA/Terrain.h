@@ -32,6 +32,7 @@ class Terrain: public Object {
 			computedNormals = false;
         }
         GLuint groundtex;
+        GLuint mountiantex;
 	public:
            Terrain() {
              Setup();
@@ -200,11 +201,13 @@ class Terrain: public Object {
 			return normals[z][x];
 		}
 
-		void LoadTextures(char * heightmap, char * ground_texture, float height){
+		void LoadTextures(char * heightmap, char * ground_texture, float height, char* mountian_texture){
             int w, h, channels;
             unsigned char * image = CZAIL::GetTextureData(heightmap, w, h,channels, true);
             //image = CZAIL::resample_image(image, w, h, channels, width_starting(), length_starting());
+            image = CZAIL::resample_image(image, w, h, channels, width_starting(), length_starting());
             groundtex = CZAIL::BuildTexture(ground_texture, true, false, false, true);
+            mountiantex = CZAIL::BuildTexture(mountian_texture, true, false, false, true);
 
         	setpars(w, h);
         	for(int y = 0; y < h; y++) {
@@ -352,9 +355,163 @@ class Terrain: public Object {
             		}
             		glEnd();
             	}
+
+
+
+                //drawnegSideMountian();
+                //drawposSideMountian();
+
+                drawmiscSideMountian();
+
+                glBindTexture (GL_TEXTURE_2D, (GLuint)NULL);
+
             	//glDisable(GL_TEXTURE_GEN_S);
 
              glPopMatrix();
+        }
+
+        void drawmiscSideMountian(){
+
+            glBindTexture (GL_TEXTURE_2D, mountiantex);
+                int alt;
+                //Try Side Mountians
+            	for(int z = -10; z < this->length() +9; z++) {
+            		//Makes OpenGL draw a triangle at every three consecutive vertices
+
+
+            		glBegin(GL_TRIANGLE_STRIP);
+            		alt = 0;
+            		for(int x = -10; x < this->width() + 10; x+= 2) {
+
+                        if (z >= 0 && x < this->width() - 2)
+                            continue;
+
+
+
+
+                        /* float tx = (float)alt / (float)(w - 1);
+                        float ty = (float)z / (float)(l - 1);
+                        float txb = (float)(alt+1)/(float)(w - 1);
+                        float tyb = (float)(z+1)/(float)(l - 1);*/
+
+
+            			 float holder = this->BetaTestHeight(x, z);
+
+
+
+                        //glTexCoord2f(tx,ty);
+                        glTexCoord2f(0.0,1.0);
+            			glVertex3f(x, holder, z);
+
+            			float holder1 = this->BetaTestHeight(x, z + 1);
+
+            			glTexCoord2f(1.0,1.0);
+            			glVertex3f(x, holder1, z + 1);
+
+
+            			 float holder2 = this->BetaTestHeight(x + 1, z);
+
+                        glTexCoord2f(1.0,0.0);
+            			glVertex3f(x + 1, holder2, z);
+
+            			float holder3 = this->BetaTestHeight(x + 1, z + 1);
+
+            			glTexCoord2f(0.0,0.0);
+            			glVertex3f(x + 1, holder3, z + 1);
+
+            			alt++;
+
+            		}
+            		glEnd();
+            	}
+
+
+            	for(int z = -10; z < this->length() +9; z++) {
+            		//Makes OpenGL draw a triangle at every three consecutive vertices
+
+
+            		glBegin(GL_TRIANGLE_STRIP);
+            		alt = 0;
+            		for(int x = -10; x < this->width() + 10; x+= 2) {
+
+                        if (x > 0 && z < this->width() - 2)
+                            continue;
+
+
+
+
+                        /* float tx = (float)alt / (float)(w - 1);
+                        float ty = (float)z / (float)(l - 1);
+                        float txb = (float)(alt+1)/(float)(w - 1);
+                        float tyb = (float)(z+1)/(float)(l - 1);*/
+
+
+            			 float holder = this->BetaTestHeight(x, z);
+
+
+
+                        //glTexCoord2f(tx,ty);
+                        glTexCoord2f(0.0,1.0);
+            			glVertex3f(x, holder, z);
+
+            			float holder1 = this->BetaTestHeight(x, z + 1);
+
+            			glTexCoord2f(1.0,1.0);
+            			glVertex3f(x, holder1, z + 1);
+
+
+            			 float holder2 = this->BetaTestHeight(x + 1, z);
+
+                        glTexCoord2f(1.0,0.0);
+            			glVertex3f(x + 1, holder2, z);
+
+            			float holder3 = this->BetaTestHeight(x + 1, z + 1);
+
+            			glTexCoord2f(0.0,0.0);
+            			glVertex3f(x + 1, holder3, z + 1);
+
+            			alt++;
+
+            		}
+            		glEnd();
+            	}
+        }
+
+        int BetaTestHeight(int x, int z){
+
+            int newz = abs(z % this->length());
+            int newx = abs(x % this->width());
+
+            bool zqualify = false;
+            bool xqualify = false;
+
+            if (z <= 0 || z >= this->length()){
+                zqualify = true;
+
+            }
+
+
+
+            if (x <= 0 || x >= this->width()){
+                xqualify = true;
+            }
+
+
+            if (zqualify && xqualify){
+                if (newz < newx)
+                    return newx;
+                else
+                    return newz;
+            }else if (zqualify){
+                return newz;
+            }else if (xqualify){
+                return newx;
+            }
+
+
+            return 0;
+
+
         }
 
         void Render(){
